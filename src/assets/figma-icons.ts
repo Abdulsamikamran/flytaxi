@@ -1,0 +1,27 @@
+/** Local copies of Figma-exported SVG/PNG assets. */
+export const figmaIcons = {
+  badgeCar: "/images/icons/badge-car.svg",
+  tick: "/images/icons/tick.svg",
+  googlePlay: "/images/icons/google-play.svg",
+  apple: "/images/icons/apple.svg",
+  airplaneTo: "/images/icons/airplane-to.svg",
+  airplaneFrom: "/images/icons/airplane-from.svg",
+  mapPinDest: "/images/icons/map-pin-dest.svg",
+  search: "/images/icons/search.svg",
+  gps: "/images/icons/gps.svg",
+  chevronDown: "/images/icons/chevron-down.svg",
+  luggage: "/images/icons/luggage.svg",
+  minus: "/images/icons/minus.svg",
+  plus: "/images/icons/plus.svg",
+  carStandard: "/images/icons/car-standard.svg",
+  carPremium: "/images/icons/car-premium.svg",
+  van: "/images/icons/van.svg",
+  scrollDown: "/images/icons/scroll-down.svg",
+  lock: "/images/icons/lock.svg",
+  flash: "/images/icons/flash.svg",
+  pilot: "/images/icons/pilot.svg",
+  /** Export node 3239:5680 only — never the full hero section (3239:5679). */
+  heroMap: "/images/hero/map-layer.png",
+  logoHeader: "/images/logo.svg",
+  logoFooter: "/images/logowhite.svg",
+} as const;
