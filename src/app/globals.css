@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fbff;
+  --foreground: #0b1f33;
+  --primary: #1688ff;
+  --primary-dark: #0b1f33;
+  --primary-2: #0b1f33;
+  --subtext: #94a3b8;
+  --stroke: #e2e8f0;
+  --success: #16a34a;
+  --footer-heading: #cbd5e1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-2: var(--primary-2);
+  --color-subtext: var(--subtext);
+  --color-stroke: var(--stroke);
+  --color-success: var(--success);
+  --color-footer-heading: var(--footer-heading);
+  --font-sans: var(--font-plus-jakarta);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select,
+a {
+  cursor: pointer;
+}
+
+/* Hebrew (RTL) uses Rubik, which has full Hebrew glyph coverage.
+   Plus Jakarta Sans (Latin only) falls back for any residual Latin text. */
+[dir="rtl"] body {
+  font-family: var(--font-rubik), var(--font-plus-jakarta), sans-serif;
+}
+
+/* Numbers, currency and codes (fares, dates, phone numbers, booking IDs)
+   should stay left-to-right even inside an RTL document. */
+[dir="rtl"] .ltr-content {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Hero booking widget — native select dropdown must use light scheme
+   so options stay readable against the dark widget background. */
+#booking select.booking-widget-select {
+  color-scheme: light;
+}
+
+#booking select.booking-widget-select option {
+  background-color: #ffffff;
+  color: #0b1f33;
+}
+
